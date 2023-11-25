@@ -1,10 +1,10 @@
 import express from 'express';
 import fs from 'fs';
 
-const app = express();
+export const app = express();
 const port = 8000;
 
-interface RobotState {
+export interface RobotState {
   x: number;
   y: number;
   heading: string;
@@ -12,7 +12,7 @@ interface RobotState {
 
 const headings = ['N', 'E', 'S', 'W']; // North, East, South, West
 
-function moveForward(state: RobotState, steps: number): RobotState {
+export function moveForward(state: RobotState, steps: number): RobotState {
   let { x, y, heading } = state;
   for (let i = 0; i < steps; i++) {
     switch (heading) {
@@ -41,9 +41,13 @@ function processCommands(commands: string, initialState: RobotState): RobotState
 
 app.get('/', (req, res) => {
   try {
+    // const input = `0 0 N
+    // M3 R1 M2 L1 M5`.split('\n');;
     const input = fs.readFileSync('./input.txt', 'utf8').split('\n');
-    console.log(`Input: ${input}`); // Add logging
+
+    console.log('Raw Input Lines:', input); // Log raw input lines
     const [initialPosition, commands] = input;
+    console.log('Initial position',initialPosition)
     const [x, y, rawHeading] = initialPosition.split(' ');
     const heading = rawHeading.trim().toUpperCase();
 
@@ -66,6 +70,10 @@ app.get('/', (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
-});
+if (require.main === module) {
+  app.listen(port, () => {
+    console.log(`Server is running at http://localhost:${port}`);
+  });
+}
+
+
