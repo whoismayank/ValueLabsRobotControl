@@ -69,7 +69,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
-- Your Name - [hello.mahendrachoudhary@gmail.com](mailto:hello.mahendrachoudhary@gmail.com)
+- Email- [hello.mahendrachoudhary@gmail.com](mailto:hello.mahendrachoudhary@gmail.com)
 - Project Link: https://github.com/whoismayank/ValueLabsRobotControl
 
 
