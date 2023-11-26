@@ -63,10 +63,6 @@ Run tests using the following command:
     npm test
 
 
-## Contributing
-
-Contributions to the project are welcome. Please follow the standard fork-and-pull request workflow.
-
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
