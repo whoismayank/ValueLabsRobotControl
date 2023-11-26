@@ -6,11 +6,11 @@ This application is a Node.js server written in TypeScript, designed for the Val
 
 The first line 0 0 N sets the initial position of the robot at the coordinates (0, 0) facing North (N).
 The second line M3 R2 M2 L1 M is a sequence of commands:
-M3 - Move forward 3 steps.
-R2 - Rotate right twice (turning 180 degrees).
-M2 - Move forward 2 steps.
-L1 - Rotate left once (turning 90 degrees).
-M - Move forward 1 step.
+- M3 - Move forward 3 steps.
+- R2 - Rotate right twice (turning 180 degrees).
+- M2 - Move forward 2 steps.
+- L1 - Rotate left once (turning 90 degrees).
+- M - Move forward 1 step.
 
 ## Features
 
