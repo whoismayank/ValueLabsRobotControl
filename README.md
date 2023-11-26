@@ -25,6 +25,7 @@ The second line M3 R2 M2 L1 M is a sequence of commands:
 
 - [Node.js](https://nodejs.org/)
 - [npm](https://www.npmjs.com/) (usually comes with Node.js)
+-  npm install -g typescript
 
 ### Installation
 
@@ -44,7 +45,7 @@ The second line M3 R2 M2 L1 M is a sequence of commands:
     npm run dev
 
 
-2. The server will start on `http://localhost:8000`. Make a GET request to this URL to initiate the robot control simulation. The input should be provided in an `input.txt` file in the project root.
+2. The server will start on `http://localhost:8000/`. Make a GET request to this URL to initiate the robot control simulation. The input should be provided in an `input.txt` file in the project root.
 
 ### Input File Format
 
