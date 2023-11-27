@@ -1,16 +1,11 @@
 import express from 'express';
 import fs from 'fs';
+import { RobotState } from './types'; // Importing types from types.ts
 
 export const app = express();
-const port = 8000;
+const port: number = 8000;
 
-export interface RobotState {
-  x: number;
-  y: number;
-  heading: string;
-}
-
-const headings = ['N', 'E', 'S', 'W']; // North, East, South, West
+const headings: string[] = ['N', 'E', 'S', 'W']; // North, East, South, West
 
 export function moveForward(state: RobotState, steps: number): RobotState {
   let { x, y, heading } = state;
@@ -43,7 +38,7 @@ app.get('/', (req, res) => {
   try {
     // const input = `0 0 N
     // M3 R1 M2 L1 M5`.split('\n');;
-    const input = fs.readFileSync('./input.txt', 'utf8').split('\n');
+    const input = fs.readFileSync('src/input.txt', 'utf8').split('\n');
 
     console.log('Raw Input Lines:', input); // Log raw input lines
     const [initialPosition, commands] = input;
@@ -59,7 +54,6 @@ app.get('/', (req, res) => {
 
     let initialState: RobotState = { x: parseInt(x), y: parseInt(y), heading };
     const finalState = processCommands(commands, initialState);
-
     res.send(`Final position: (${finalState.x}, ${finalState.y}, ${finalState.heading})`);
   } catch (error) {
     if (error instanceof Error) {
